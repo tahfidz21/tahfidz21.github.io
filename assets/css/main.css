@@ -3854,7 +3854,7 @@ span.clicked {
 	font-weight: 300;
 	height: 2.75em;
 	line-height: 2.75em;
-	min-width: 9.25em;
+	min-width: 100%;
 	padding: 0;
 	text-align: center;
 	text-decoration: none;
