@@ -3774,6 +3774,8 @@ input, select, textarea {
 				max-width: calc(100% - 2em);
 			}
 
+			.audio {width:100%}
+
 		}
 
 		@media screen and (max-width: 360px) {
