@@ -1,83 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Changing Button text on hovering using localStorage</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content=
-		"width=device-width, initial-scale=1.0">
-	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500&display=swap');
-		* {
-			margin: 0px;
-			padding: 0px;
-			font-family: 'Zilla Slab', serif;
-		}
-		section {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			right: 0px;
-			bottom: 0px;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-		}
-		#containers {
-			text-align: center;
-			border: 2px solid green;
-			height: 52vh;
-			width: 29vw;
-			display: flex;
-			justify-content: center;
-			flex-direction: column;
-			background-color: cornsilk;
-		}
-		section p {
-			font-weight: 400;
-		}
-		/* Designing Button */
-		#btn {
-			margin-top: 12px;
-		}
-		button {
-			padding: 7px;
-			border: 1px solid black;
-			border-radius: 3px;
-			cursor: pointer;
-			font-weight: 500;
-		}
-		button:hover {
-			transition: 1s;
-			background-color: rgb(226, 226, 228);
-		}
-	</style>
-</head>
+<h1>Text Swapping</h1>
 
-<body>
-	<section id="btn-container">
-		<div id="containers">
-			<p id="para-id">
-			Click the Button to change the Button text
-			</p>
+<h2>jQuery Way (more markup / less js)</h2>
+<button id="example-one" data-text-swap="Show" data-text-original="Hide">Hide</button>
 
-			<button id="114" onclick="myFunction()" class="float">Ya, tandai sudah hafal</button>
-		</div>
-	</section>
-</body>
-<script>
-var btn = document.getElementById("114");
+<h2>jQuery Way (less markup / more js)</h2>
+<button id="example-two" data-text-swap="Show">Hide</button>
 
-function myFunction() {
-  if (btn.innerHTML=="Yes! 2 saya sudah hafal") btn.innerHTML = "Saya belum hafal";
-  else btn.innerHTML = "Yes! 2 saya sudah hafal";
-  window.localStorage.setItem('114', btn.innerHTML);
-}
+<h2>Vanilla JS Way</h2>
+<button id="example-three" data-text-swap="Show">Hide</button>
 
-var btnLabel = window.localStorage.getItem('114');
-if (btnLabel) {
-  btn.innerHTML = btnLabel;
-}
+<h2>CSS Way w/ jQuery class change</h2>
+<a id="example-four" href="#0">Show</a>
 
-</script>
-</html>
+<h2>CSS Only Way</h2>
+<input type="checkbox" id="example-five-checkbox" />
+<label id="example-five" for="example-five-checkbox">Show</label>
