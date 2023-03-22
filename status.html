@@ -51,7 +51,7 @@
 					<div id="main">
 
 						<!-- Content -->
-							<section id="content" class="main">
+							<section id="content" class="main specific" style="background-color: #ffffff;">
 								<h1>Status Hafalan <span id="namasiswa"></span></h1>
 								<div class="content">
 									<table>
@@ -187,10 +187,6 @@
 										  </tr>
 
 									  </table>
-
-								  <p>Keterangan: <b>true</b> berarti anda menandai hafal, sedangan kosong berarti belum hafal.</p>
-								  
-								  
 								  
 								  <script>
 								  // Retrieve
@@ -222,10 +218,30 @@
 								  document.getElementById("090").innerHTML = localStorage.getItem("090");
 								  </script>
 
-								</script>
 								</div>
 							
 							</section>
+
+							<section class="main" style="background-color: #eeeeee">
+								<p>Keterangan: <b>true</b> berarti anda menandai hafal, sedangan kosong berarti belum hafal.</p>
+								<p>Unduh status hafalan dan kirimkan ke Whatsapp Bu Nur Azizah S.Pd.I atau Bp. Ahmad Farid Mubarok S.Pd.I</p>
+								  
+								<button type="button" class="button" style="background-color: #ffffff;">Unduh status hafalan saya</button>
+								<br/><br/>
+							</section>
+
+							
+
+							<script>
+								document.querySelector('button').addEventListener('click', function() {
+        html2canvas(document.querySelector('.specific'), {
+            onrendered: function(canvas) {
+                // document.body.appendChild(canvas);
+              return Canvas2Image.saveAsPNG(canvas);
+            }
+        });
+    });
+							</script>
 
 					</div>
 
@@ -271,6 +287,10 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+
+			<script src='assets/js/html2canvas.min.js'></script>
+			<script src='assets/js/canvas2image.js'></script>
 
 <script>
 const state = document.querySelector("#state");
