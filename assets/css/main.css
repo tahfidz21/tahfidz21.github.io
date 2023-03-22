@@ -3866,18 +3866,9 @@ span.clicked {
     box-shadow: none;
 }
 
-#example-five {
-  position: relative;
-}
-#before {
-  display: none;
-}
-#before:checked + #example-five:after {
-  content: "Hide";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: white;
-}
+.whatsapp
+    {
+        width: 25px;
+		position: relative;
+		margin-bottom: -7px;;
+    }
