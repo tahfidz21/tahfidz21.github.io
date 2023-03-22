@@ -59,9 +59,61 @@
 									<header class="major">
 										<h2>Irhamna bil Quran</h2>
 									</header>
-									<p>Aplikasi ini ditujukan untuk membantu siswa SMPN 21 Purworejo dalam menghafalkan dan memahami surat-surat pendek dalam Quran. Dilengkapi audio dan dapat diberi tanda jika sudah berhasil menghafalkan.</p>
+
+									<form id="name-form">
+										<label for="name">Nama Lengkap:</label>
+										<input style="text-align: center;" type="text" id="name" name="name" placeholder="Tulis nama lengkap anda" required />
+										<input style="margin-top: 5px;" type="submit" value="Simpan" />
+									  </form>
+									
+									  <div id="welcome">
+										<h1><span id="username"></span></h1>
+										<div style="margin-top: -30px;margin-bottom: 20px;" id="logout">(edit nama)</div>
+									  </div>
+
+									  <script>
+										const nameForm = document.querySelector("#name-form");
+										const welcome = document.querySelector("#welcome");
+										const logout = document.querySelector("#logout");
+
+										const checkUser = () => {
+										const userName = localStorage.getItem("namasiswa");
+
+										if (userName) {
+											nameForm.style.display = "none";
+											welcome.style.display = "block";
+
+											const userNameElement = document.querySelector("#username");
+											userNameElement.textContent = userName;
+										} else {
+											nameForm.style.display = "block";
+											welcome.style.display = "none";
+										}
+										};
+
+										nameForm.addEventListener("submit", (e) => {
+										e.preventDefault();
+
+										const nameInput = document.querySelector("#name");
+										localStorage.setItem("namasiswa", nameInput.value);
+
+										nameInput.value = "";
+
+										checkUser();
+										});
+
+										logout.addEventListener("click", () => {
+										localStorage.removeItem("namasiswa");
+
+										checkUser();
+										});
+
+										checkUser();
+
+									  </script>
+
 									<ul class="actions">
-										<li><a href="tentang.html" class="button">Selengkapnya</a></li>
+										<li><a href="status.html" class="button">Lihat status hafalan saya</a></li>
 									</ul>
 								</div>
 								<span class="image"><img src="images/21.jpg" alt="" /></span>
