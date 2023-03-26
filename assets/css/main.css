@@ -3873,3 +3873,6 @@ span.clicked {
 		margin-bottom: -7px;;
     }
 
+	.clickable {
+		cursor: pointer;
+	}
